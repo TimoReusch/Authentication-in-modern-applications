@@ -77,9 +77,6 @@ class BasicAuth(Scene):
 
         self.play(Write(arrow_progress_6, run_time=0.4), FadeIn(description_for_6))
         self.wait(1)
-        self.play(FadeOut(
-            client, server, line_s, line_c,
-            arrow_progress_1, arrow_progress_2, arrow_progress_3, arrow_progress_4, arrow_progress_5, arrow_progress_6,
-            description_for_1, description_for_2, description_for_3, description_for_4, description_for_5,
-            description_for_6
-        ))
+        self.play(
+            *[FadeOut(mob)for mob in self.mobjects]
+        )
