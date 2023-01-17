@@ -18,7 +18,13 @@ class Company(Scene):
         self.play(FadeIn(slack), Write(a1))
         sap = ImageMobject("assets/sap.png").scale(0.2).move_to((-1, -2, 0))
         self.play(FadeIn(sap), Write(a2))
-        microsoft = ImageMobject("assets/microsoft.png").scale(0.1).move_to((1, -2, 0))
-        self.play(FadeIn(microsoft), Write(a3))
-        gitlab = ImageMobject("assets/gitlab.png").scale(0.5).move_to((3, -2, 0))
-        self.play(FadeIn(gitlab), Write(a4))
+        gitlab = ImageMobject("assets/gitlab.png").scale(0.5).move_to((1, -2, 0))
+        self.play(FadeIn(gitlab), Write(a3))
+        zoom = ImageMobject("assets/zoom.png").scale(0.15).move_to((3, -2, 0))
+        self.play(FadeIn(zoom), Write(a4))
+
+        self.wait(1)
+
+        self.play(
+            *[FadeOut(mob)for mob in self.mobjects]
+        )
