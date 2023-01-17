@@ -18,7 +18,9 @@ class SessionDatabaseEntry(Scene):
         self.play(table.create(label_animation=FadeIn, element_animation=Write))
         self.wait(1)
         self.play(FadeIn(table.get_cell((2, 5)).set_fill(GREEN, 0.3).set_stroke(GREEN)))
+
         self.wait(1)
+
         self.play(
             *[FadeOut(mob) for mob in self.mobjects]
         )
