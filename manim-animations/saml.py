@@ -75,6 +75,11 @@ class Saml(Scene):
 
         self.wait(1)
 
+        title = Text("Service Provider-Initiated SSO", font_size=27, weight=BOLD).move_to((-4, 3, 0))
+        self.play(Write(title))
+
+        self.wait(1)
+
         self.play(
             *[FadeOut(mob)for mob in self.mobjects]
         )
