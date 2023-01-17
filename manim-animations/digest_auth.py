@@ -14,9 +14,7 @@ class BasicAuthEncoding(Scene):
 
         hash_1_group = VGroup().add(ha_1_info, ha_1_unhashed, ha_1)
 
-        self.play(hash_1_group.animate.scale(0.5))
-        self.play(hash_1_group.animate.shift(LEFT*4))
-        self.play(hash_1_group.animate.shift(UP*2))
+        self.play(hash_1_group.animate.shift(LEFT*4).shift(UP*2).scale(0.5))
 
         ha_2_info = Text("MD5(method:digestURI)")
         ha_2_unhashed = Text("GET:secret")
@@ -29,9 +27,7 @@ class BasicAuthEncoding(Scene):
 
         hash_2_group = VGroup().add(ha_2_info, ha_2_unhashed, ha_2)
 
-        self.play(hash_2_group.animate.scale(0.5))
-        self.play(hash_2_group.animate.shift(RIGHT*4))
-        self.play(hash_2_group.animate.shift(UP*2))
+        self.play(hash_2_group.animate.shift(RIGHT*4).shift(UP*2).scale(0.5))
 
         ha_3_info = Text("MD5(HA1:nonce:HA2)")
         nonce = Text(": P&pMu$3#qCs :")

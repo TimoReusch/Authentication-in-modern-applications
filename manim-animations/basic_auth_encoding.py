@@ -8,8 +8,7 @@ class BasicAuthEncoding(Scene):
         self.play(FadeIn(credentials))
         self.wait(1)
 
-        self.play(credentials.animate.shift(UP))
-        self.play(credentials.animate.scale(0.5))
+        self.play(credentials.animate.shift(UP).scale(0.5))
 
         user_pass = Text("uni:wue")
         self.play(FadeIn(user_pass))
