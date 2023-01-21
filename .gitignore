@@ -1,6 +1,6 @@
 /manim-animations/venv/
-/manim-animations/media/
 /manim-animations/.idea/
 /manim-animations/manim-animations.iml
 .idea/workspace.xml
-manim-animations/__pycache__/
+media/
+__pycache__/
