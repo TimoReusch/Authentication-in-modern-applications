@@ -101,7 +101,7 @@ class AuthorizationGrantFlow(Scene):
 
         # --- Login-Section ---
         arrow_google_login = Line((x_auth, 1.45, 0), (2, 2.15, 0)).add_tip(tip_width=tip, tip_length=tip)
-        login = ImageMobject("../assets/google-sign-in.png").move_to((x_login, 2.15, 0)).scale(0.9).set_z_index(-4)
+        login = ImageMobject("../assets/google-sign-in.png").move_to((x_login, 2.15, 0)).scale(0.33).set_z_index(-4)
         self.play(Create(r_3),
                   FadeIn(redirect_txt),
                   Create(arrow_google_login),
@@ -110,7 +110,7 @@ class AuthorizationGrantFlow(Scene):
         self.wait(1)
 
         arrow_login_consent = Line((x_login, 1.2, 0), (x_login, 0.3, 0)).add_tip(tip_width=tip, tip_length=tip)
-        consent = ImageMobject("../assets/consent.png").move_to((x_login, 0, 0)).set_z_index(-4)
+        consent = ImageMobject("../assets/consent.png").scale(0.29).move_to((x_login, 0, 0)).set_z_index(-4)
         self.play(Create(arrow_login_consent), FadeIn(consent), resource_owner_img.animate.move_to((2, 0, 0)))
         self.wait(1)
 
@@ -197,6 +197,7 @@ Authorization: Bearer aEHcyKhkL6FLSWJwiYoD3dMRN2e4bY
         y_a8 = y_a7 - 0.5
         contacts_res_client = DashedLine((x_res, y_a8, 0), (x_client, y_a8, 0)).add_tip(tip_width=tip, tip_length=tip)
         contacts_res_client_txt = Text("Contacts", font_size=font_size).move_to((2, y_a8+y_text_space, 0))
+        # resource_img.scale(0.7).move_to((2, y_a8-0.6, 0))
         self.play(Create(contacts_res_client), FadeIn(contacts_res_client_txt))
         self.wait(1)
 
