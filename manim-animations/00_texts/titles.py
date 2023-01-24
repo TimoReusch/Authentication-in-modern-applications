@@ -58,7 +58,7 @@ class Title(Scene):
 class Fazit(Scene):
     def construct(self):
         weight = LIGHT
-        title = Text("Fazit", font="Monserrat", line_spacing=0.8, weight=weight, font_size=35, should_center=False).move_to((0, 0, 0))
+        title = Text("OpenID Connect", font="Monserrat", line_spacing=0.8, weight=weight, font_size=35, should_center=False).move_to((0, 0, 0))
         self.play(FadeIn(title, shift=0.1*UP))
         self.wait(2)
         self.play(FadeOut(title))
