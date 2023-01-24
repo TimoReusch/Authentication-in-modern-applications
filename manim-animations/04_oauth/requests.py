@@ -141,3 +141,31 @@ Authorization: Bearer aEHcyKhkL6FLSWJwiYoD3dMRN2e4bY
         self.play(
             *[FadeOut(mob)for mob in self.mobjects]
         )
+
+
+class RequestToken(Scene):
+    def construct(self):
+        code = '''GET
+
+https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?
+	client_id=92374673
+	&scope=email openid https://www.googleapis.com/auth/contacts.readonly
+	&response_type=code
+	&redirect_uri=https://account.proton.me/oauth/callback
+	[...]
+'''
+        rendered_code = Code(code=code, tab_width=4, background="rectangle", insert_line_no=False, style="github-dark",
+                             line_spacing=0.8, language="python", font="Monospace", background_stroke_width=0).scale(0.8)
+        rendered_code[0].set_z_index(-2)
+
+        self.play(FadeIn(rendered_code))
+        self.wait(1)
+
+        highlight = BackgroundRectangle(rendered_code[2][5][1:], stroke_width=1, buff=0.05, color=GREEN, fill_opacity=0.5, z_index=-1)
+        self.play(Create(highlight))
+
+        self.wait(2)
+
+        self.play(
+            *[FadeOut(mob)for mob in self.mobjects]
+        )
