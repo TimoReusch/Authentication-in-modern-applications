@@ -62,3 +62,28 @@ class Fazit(Scene):
         self.play(FadeIn(title, shift=0.1*UP))
         self.wait(2)
         self.play(FadeOut(title))
+
+class Credits(Scene):
+    def construct(self):
+        weight = LIGHT
+        title = Text("Authentifizierung in modernen Applikationen", font="Monserrat", line_spacing=0.8, weight=weight, font_size=35, should_center=False).move_to((0, 0, 0))
+        subtitle = Text("- ein Überblick", font="Monserrat", line_spacing=0.8, weight=weight, font_size=35, should_center=False).next_to(title, DOWN)
+        self.play(FadeIn(title, shift=0.1*UP), FadeIn(subtitle, shift=0.1*UP))
+        self.wait(2)
+        self.play(FadeOut(title, subtitle))
+        author = Text("von Timo Reusch", font="Monserrat", line_spacing=0.8, weight=weight, font_size=35, should_center=False).move_to((0, 0, 0))
+        self.play(FadeIn(author, shift=0.1*UP))
+        self.wait(2)
+        self.play(FadeOut(author))
+        seminar2 = Text('an der Julius-Maximilians-Universität Würzburg', font="Monserrat", line_spacing=0.8, weight=weight, font_size=25).move_to((0, 0, 0))
+        seminar1 = Text('Entstanden im Rahmen des Seminars "Avionic Devices"', font="Monserrat", line_spacing=0.8, weight=weight, font_size=25).next_to(seminar2, UP)
+        seminar3 = Text('im Wintersemester 2022/23', font="Monserrat", line_spacing=0.8, weight=weight, font_size=25).next_to(seminar2, DOWN)
+        self.play(FadeIn(seminar1, shift=0.1*UP), FadeIn(seminar2, shift=0.1*UP), FadeIn(seminar3, shift=0.1*UP))
+        self.wait(3)
+        self.play(FadeOut(seminar1, seminar2, seminar3))
+        sources1 = Text("Quellenangaben unter:", font="Monserrat", line_spacing=0.8, weight=weight, font_size=25).move_to((0, 0, 0))
+        sources2 = Text("github.com/TimoReusch/Authentication-in-modern-applications", font="Monserrat", line_spacing=0.8, weight=weight, font_size=25).next_to(sources1, DOWN)
+        self.play(FadeIn(sources1, shift=0.1*UP), FadeIn(sources2, shift=0.1*UP))
+        self.wait(4)
+        self.play(FadeOut(sources1, sources2))
+        self.wait(1)
