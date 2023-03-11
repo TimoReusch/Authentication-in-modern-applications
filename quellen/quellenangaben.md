@@ -35,4 +35,6 @@
 | ---- | ------------------------------------------------------------ |
 | B1   | Basierend auf https://dotnetthoughts.net/assets/images/2013/11/basic_auth.png |
 | B2   | Basierend auf https://docs.citrix.com/en-us/citrix-adc/media/saml-flow-citrix.png |
-| B3   | https://speakerdeck.com/nbarbettini/oauth-and-openid-connect-in-plain-english?slide=5 |
+| B3   | https://images.pingidentity.com/image/upload/f_auto,q_auto,w_auto,c_scale/ping_dam/content/dam/ping-6-2-assets/images/resources/articles/saml-screenshot.png |
+| B4   | https://speakerdeck.com/nbarbettini/oauth-and-openid-connect-in-plain-english?slide=5 |
+
